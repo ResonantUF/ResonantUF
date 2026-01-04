@@ -279,7 +279,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-gold);
+            color: var (--primary-gold);
         }
 
         .nav-links a:hover::after {
@@ -370,21 +370,24 @@
         .about-content {
             position: relative;
             z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
         }
 
-        .about-text h2 {
-            color: var(--primary-blue);
+        .about-text {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .about-text > div {
+            flex: 1 1 300px;
+            min-width: 250px;
         }
 
         .about-features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 30px;
-            margin-top: 40px;
         }
 
         .feature {
@@ -409,24 +412,6 @@
         .feature-text h4 {
             color: var(--primary-blue);
             margin-bottom: 10px;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: 400px;
-            background: var(--primary-blue);
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--primary-gold);
-            font-size: 1.2rem;
-            border: 2px solid var(--primary-gold);
-            box-shadow: var(--glow);
         }
 
         /* ====== SERVICES SECTION ====== */
@@ -496,30 +481,6 @@
             background: var(--light-gray);
         }
 
-        .portfolio-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 50px;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            background: transparent;
-            color: var(--primary-blue);
-            border: 1px solid var(--primary-blue);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary-gold);
-            color: var(--primary-blue);
-            border-color: var(--primary-gold);
-        }
-
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -577,157 +538,6 @@
             color: var(--white);
         }
 
-        /* ====== TEAM SECTION ====== */
-        .team {
-            background: var(--white);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .team-member {
-            background: var(--light-gray);
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
-        }
-
-        .member-img {
-            width: 100%;
-            height: 250px;
-            background: var(--primary-blue);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--primary-gold);
-            font-size: 1.2rem;
-        }
-
-        .member-info {
-            padding: 25px 20px;
-        }
-
-        .member-info h3 {
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-        }
-
-        .member-role {
-            color: var(--light-blue);
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: var(--primary-blue);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--primary-gold);
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background: var(--primary-gold);
-            color: var(--primary-blue);
-        }
-
-        /* ====== CONTACT SECTION ====== */
-        .contact {
-            background: var(--light-gray);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info h2 {
-            color: var(--primary-blue);
-            margin-bottom: 30px;
-        }
-
-        .contact-details {
-            margin-bottom: 40px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--primary-gold);
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .contact-text h4 {
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-        }
-
-        .contact-form {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            background: var(--light-gray);
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            color: var(--primary-blue);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-gold);
-            box-shadow: 0 0 0 2px rgba(248, 193, 31, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
         /* ====== FOOTER ====== */
         footer {
             background: var(--primary-blue);
@@ -737,7 +547,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr); /* Tre jämna kolumner */
             gap: 40px;
             margin-bottom: 50px;
         }
@@ -784,8 +594,7 @@
 
         /* ====== RESPONSIVE STYLES ====== */
         @media screen and (max-width: 992px) {
-            .about-content,
-            .contact-content {
+            .about-content {
                 grid-template-columns: 1fr;
             }
 
@@ -883,10 +692,6 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* ====== ANIMATIONS ====== */
@@ -939,10 +744,7 @@
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#hero">Hem</a></li>
                     <li><a href="#about">Om oss</a></li>
-                    <li><a href="#services">Tjänster</a></li>
-                    <li><a href="#portfolio">Portfölj</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="#services">Team</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <div></div>
@@ -957,11 +759,11 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="fade-in">Innovation som <span>Resonant UF</span></h1>
-                <p class="fade-in delay-1">Vi skapar framtidens lösningar genom banbrytande teknologi och kreativt tänkande. Vårt UF-företag fokuserar på att utveckla produkter och tjänster som gör en verklig skillnad.</p>
+                <h1 class="fade-in">Resonant UF <span>Bästa musiken</span></h1>
+                <p class="fade-in delay-1">Vi skapar musik, beats och jinglar som är av högsta kvalitet. Våra beats är jämnförbara med de bästa i branschen fast för ett pris som inte går att matcha.</p>
+                <p class="fade-in delay-2">Om du blir sugen på att köpa ett beat av oss så kontakta oss genom Instagram eller maila oss på ...gmail</p>
                 <div class="hero-btns fade-in delay-2">
                     <a href="#about" class="btn btn-secondary">Upptäck mer</a>
-                    <a href="#contact" class="btn">Kontakta oss</a>
                 </div>
             </div>
         </div>
@@ -974,11 +776,13 @@
                 <h2>Om Resonant UF</h2>
             </div>
             <div class="about-content">
-                <div class="about-text">
-                    <h2>Vår Vision</h2>
-                    <p>Resonant UF är ett innovativt UF-företag som strävar efter att skapa lösningar som inte bara möter dagens behov utan också formar morgondagens möjligheter. Vårt team består av passionerade studenter med olika kompetenser som samarbetar för att utveckla banbrytande produkter och tjänster.</p>
-                    <p>Vi tror på kraften i samarbete, kreativitet och teknologi för att lösa komplexa utmaningar och skapa värde för våra kunder och samhället i stort.</p>
-                    <div class="about-features">
+                <div class="about-text" style="display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start;">
+                    <div style="flex: 1 1 300px; min-width: 250px;">
+                        <h2>Vår Vision</h2>
+                        <p>Vi skapade resonant för att vi inom företaget älskar att skapa musik och vill vara del av den industrin men vi strävar också efter att få industrin att bli billigare men också samtidigt bibehålla samma kvalitet på musiken.</p>
+                        <p>Genom att sammarbeta med våra kunder och komunisera under produktionen av beats och musik så kan vi garantera en slutprodukt som verkligen speglar deras vision och behov.</p>
+                    </div>
+                    <div class="about-features" style="flex: 1 1 300px; min-width: 250px;">
                         <div class="feature">
                             <div class="feature-icon">✓</div>
                             <div class="feature-text">
@@ -997,21 +801,16 @@
                             <div class="feature-icon">✓</div>
                             <div class="feature-text">
                                 <h4>Samarbete</h4>
-                                <p>Vi tror på kraften i teamarbete och mångfald.</p>
+                                <p>Vi tror på samarbete och kommunikation för att nå bästa resultat.</p>
                             </div>
                         </div>
                         <div class="feature">
                             <div class="feature-icon">✓</div>
                             <div class="feature-text">
-                                <h4>Hållbarhet</h4>
-                                <p>Våra lösningar tar hänsyn till miljö och samhälle.</p>
+                                <h4>Prisvärt</h4>
+                                <p>Våra lösningar är kostnadseffektiva och ger stort värde för pengarna.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        Resonant UF Team
                     </div>
                 </div>
             </div>
@@ -1022,38 +821,32 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Våra Tjänster</h2>
+                <h2>Vårat Team</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">💡</div>
-                    <h3>Produktutveckling</h3>
-                    <p>Vi skapar innovativa produkter från idé till färdig lösning med fokus på användarcentrerad design och funktionalitet.</p>
+                    <h3>Axel - Musikproducent och Vd</h3>
+                    <p>Axel är en passionerad musikproducent med erfarenhet av att skapa högkvalitativa beats och jinglar. Han har blandannat gjort musik till sin egna sporifyprofil.</p>
                 </div>
                 <div class="service-card fade-in delay-1">
-                    <div class="service-icon">🔍</div>
-                    <h3>Marknadsanalys</h3>
-                    <p>Våra detaljerade marknadsanalyser hjälper er att förstå era kunder, konkurrenter och marknadspotential.</p>
+                    <h3>Vilmer- Musikproducent</h3>
+                    <p>Producerar och utveklar musik och ansvarar att den slutdliga produkten uppfyller kundens krav och förväntningar och att kvaliten på ljudet är av högsta grad.</p>
                 </div>
                 <div class="service-card fade-in delay-2">
-                    <div class="service-icon">📱</div>
-                    <h3>Digitala Lösningar</h3>
-                    <p>Vi utvecklar webbplatser, appar och digitala plattformar som förbättrar användarupplevelsen och effektiviteten.</p>
+                    <h3>Isak - Musikproducent</h3>
+                    <p>Isak är en kreativ musikproducent med fokus på att skapa unika ljudlandskap och atmosfärer. Han har och mycket erfarenhet med musik då han har vart med och skapat musik för gruppen Övermarken.</p>
                 </div>
                 <div class="service-card fade-in delay-3">
-                    <div class="service-icon">📊</div>
-                    <h3>Affärsutveckling</h3>
-                    <p>Vi hjälper er att utveckla affärsmodeller, strategier och implementeringsplaner för att maximera er tillväxt.</p>
+                    <h3>Zacke - Kommunikationsansvarig och marknadsförare</h3>
+                    <p>Zacke ansvarar för all kommunikation och marknadsföring, och ser till att företagets budskap når ut på rätt sätt. Han är även den som håller kontakten mellan våra kunder</p>
                 </div>
                 <div class="service-card fade-in delay-4">
-                    <div class="service-icon">🔄</div>
-                    <h3>Processoptimering</h3>
-                    <p>Vi analyserar och förbättrar era arbetsprocesser för att öka effektiviteten och minska onödiga kostnader.</p>
+                    <h3>Leevi - Ekonomiansvarig och marknadsförare</h3>
+                    <p>Leevi ansvarar för företagets ekonomi och budgetering, samt marknadsföring av våra tjänster. Han ser till att vi håller oss inom budget och att våra marknadsföringsinsatser ger resultat.</p>
                 </div>
                 <div class="service-card fade-in delay-4">
-                    <div class="service-icon">🎯</div>
-                    <h3>Strategisk Rådgivning</h3>
-                    <p>Våra experter ger er värdefulla insikter och rekommendationer för att nå era affärsmål.</p>
+                    <h3>Viggo - Webbutvecklare</h3>
+                    <p>Viggo är en erfaren webbutvecklare med fokus på att skapa användarvänliga och responsiva webbplatser. Han har arbetat med flera framstående kunder och har en passion för att lösa komplexa problem genom teknik.</p>
                 </div>
             </div>
         </div>
@@ -1063,181 +856,32 @@
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>Vårt Arbete</h2>
-            </div>
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">Alla</button>
-                <button class="filter-btn" data-filter="web">Webbutveckling</button>
-                <button class="filter-btn" data-filter="app">Appar</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-                <button class="filter-btn" data-filter="consulting">Rådgivning</button>
+                <h2>Våra beats</h2>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold);">Webbprojekt 1</div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Neo-soul beat</div>
                     <div class="portfolio-overlay">
-                        <h3>E-handelsplattform</h3>
-                        <p>En modern e-handelslösning med fokus på användarvänlighet och konvertering.</p>
-                        <a href="#" class="btn btn-secondary">Se projekt</a>
+                        <button class="play-btn" data-audio="neo-soul beat.mp3">
+                            ▶ Spela upp
+                        </button>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold);">App Projekt 1</div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Spader</div>
                     <div class="portfolio-overlay">
-                        <h3>Produktivitetsapp</h3>
-                        <p>En mobilapp designad för att förbättra personlig produktivitet och tidshantering.</p>
-                        <a href="#" class="btn btn-secondary">Se projekt</a>
+                        <button class="play-btn" data-audio="yasin beat - spader (mixad).mp3">
+                            ▶ Spela upp
+                        </button>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="design">
-                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold);">Design Projekt 1</div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Sommar drill</div>
                     <div class="portfolio-overlay">
-                        <h3>Varumärkesdesign</h3>
-                        <p>Komplett varumärkesidentitet för ett startup-företag inom tekniksektorn.</p>
-                        <a href="#" class="btn btn-secondary">Se projekt</a>
+                        <button class="play-btn" data-audio="sommar drill prodbyvimpo mixed by nickeno.mp3">
+                            ▶ Spela upp
+                        </button>
                     </div>
-                </div>
-                <div class="portfolio-item" data-category="consulting">
-                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold);">Rådgivningsprojekt 1</div>
-                    <div class="portfolio-overlay">
-                        <h3>Affärsstrategi</h3>
-                        <p>Utveckling av affärsstrategi och tillväxtplan för ett medtech-företag.</p>
-                        <a href="#" class="btn btn-secondary">Se projekt</a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold);">Webbprojekt 2</div>
-                    <div class="portfolio-overlay">
-                        <h3>Korporativ webbplats</h3>
-                        <p>En responsiv webbplats för ett större företag med fokus på varumärkesstyrka.</p>
-                        <a href="#" class="btn btn-secondary">Se projekt</a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold);">App Projekt 2</div>
-                    <div class="portfolio-overlay">
-                        <h3>Hälsotracker</h3>
-                        <p>En hälsorelaterad app för att spåra träning, kost och välmående.</p>
-                        <a href="#" class="btn btn-secondary">Se projekt</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Vårt Team</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-member fade-in">
-                    <div class="member-img">VD / Grundare</div>
-                    <div class="member-info">
-                        <h3>Alexandra Nilsson</h3>
-                        <div class="member-role">VD & Grundare</div>
-                        <p>Alexandra har en bakgrund inom företagsekonomi och innovation med en passion för att skapa lösningar som gör skillnad.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-icon">in</a>
-                            <a href="#" class="social-icon">@</a>
-                            <a href="#" class="social-icon">f</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member fade-in delay-1">
-                    <div class="member-img">Teknisk Chef</div>
-                    <div class="member-info">
-                        <h3>Marcus Lindgren</h3>
-                        <div class="member-role">Teknisk Chef</div>
-                        <p>Marcus är vår teknologexpert med erfarenhet från flera tech-startups och en stark bakgrund inom mjukvaruutveckling.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-icon">in</a>
-                            <a href="#" class="social-icon">@</a>
-                            <a href="#" class="social-icon">f</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member fade-in delay-2">
-                    <div class="member-img">Design Chef</div>
-                    <div class="member-info">
-                        <h3>Emma Johansson</h3>
-                        <div class="member-role">Design Chef</div>
-                        <p>Emma kombinerar estetik med funktionalitet för att skapa användarupplevelser som engagerar och inspirerar.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-icon">in</a>
-                            <a href="#" class="social-icon">@</a>
-                            <a href="#" class="social-icon">f</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member fade-in delay-3">
-                    <div class="member-img">Marknadsansvarig</div>
-                    <div class="member-info">
-                        <h3>David Andersson</h3>
-                        <div class="member-role">Marknadsansvarig</div>
-                        <p>David har expertis inom digital marknadsföring och varumärkesutveckling med fokus på att nå rätt målgrupp.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-icon">in</a>
-                            <a href="#" class="social-icon">@</a>
-                            <a href="#" class="social-icon">f</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kontakta Oss</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Låt oss samarbeta</h2>
-                    <p>Vi är alltid intresserade av nya samarbeten och spännande projekt. Tveka inte att höra av dig till oss!</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-text">
-                                <h4>Adress</h4>
-                                <p>Innovationsgatan 12<br>123 45 Teknikstaden</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-text">
-                                <h4>Telefon</h4>
-                                <p>+46 70 123 45 67</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div class="contact-text">
-                                <h4>E-post</h4>
-                                <p>info@resonantuf.se</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ditt namn" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Din e-post" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ämne">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Ditt meddelande" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-secondary">Skicka meddelande</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -1249,37 +893,21 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>Resonant UF</h3>
-                    <p>Vi skapar innovativa lösningar för framtiden genom teknologi, kreativitet och samarbete.</p>
+                    <p>Vi skapar musik och förnyar en industri</p>
                 </div>
                 <div class="footer-col">
                     <h3>Länkar</h3>
                     <ul class="footer-links">
                         <li><a href="#hero">Hem</a></li>
                         <li><a href="#about">Om oss</a></li>
-                        <li><a href="#services">Tjänster</a></li>
-                        <li><a href="#portfolio">Portfölj</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#contact">Kontakt</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Tjänster</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Produktutveckling</a></li>
-                        <li><a href="#">Marknadsanalys</a></li>
-                        <li><a href="#">Digitala lösningar</a></li>
-                        <li><a href="#">Affärsutveckling</a></li>
-                        <li><a href="#">Processoptimering</a></li>
-                        <li><a href="#">Strategisk rådgivning</a></li>
+                        <li><a href="#services">Team</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Följ oss</h3>
                     <ul class="footer-links">
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Tiktok</a></li>
                         <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
                     </ul>
                 </div>
             </div>
@@ -1311,12 +939,10 @@
         // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
-
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-
         // Close mobile menu when clicking on a link
         const navItems = document.querySelectorAll('.nav-links a');
         navItems.forEach(item => {
@@ -1326,55 +952,34 @@
             });
         });
 
-        // Portfolio filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filterValue = this.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Tack för ditt meddelande! Vi återkommer till dig så snart som möjligt.');
-            contactForm.reset();
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+        // Portfolio play button logic
+        const playButtons = document.querySelectorAll('.play-btn');
+        let currentAudio = null;
+        playButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const audioSrc = this.getAttribute('data-audio');
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
                 }
+                currentAudio = new Audio(audioSrc);
+                currentAudio.play();
+                this.textContent = 'Stoppa';
+                currentAudio.onended = () => {
+                    this.textContent = 'Spela upp';
+                };
+                this.onclick = () => {
+                    if (!currentAudio.paused) {
+                        currentAudio.pause();
+                        currentAudio.currentTime = 0;
+                        this.textContent = 'Spela upp';
+                    } else {
+                        currentAudio.play();
+                        this.textContent = 'Stoppa';
+                    }
+                };
             });
-        }, observerOptions);
-
-        const animatedElements = document.querySelectorAll('.service-card, .team-member');
-        animatedElements.forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
