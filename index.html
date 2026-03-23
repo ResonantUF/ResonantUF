@@ -1055,7 +1055,7 @@
                 <div class="portfolio-item">
                     <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Yasin Gitarr - Stilig</div>
                     <div class="portfolio-overlay">
-                        <button class="play-btn" data-audio="Yasin gitarr beat &quot;Stilig&quot; (prodby.vimpo).mp3">
+                        <button class="play-btn" data-audio="Yasin gitarr beat Stilig (prodby.vimpo).mp3">
                             ▶ Spela upp
                         </button>
                     </div>
@@ -1079,7 +1079,7 @@
                 <div class="portfolio-item">
                     <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Einar - Tider</div>
                     <div class="portfolio-overlay">
-                        <button class="play-btn" data-audio="einar type beat &quot;tider&quot; (prod vimpo x nickeno).mp3">
+                        <button class="play-btn" data-audio="einar - tider.mp3">
                             ▶ Spela upp
                         </button>
                     </div>
@@ -1172,7 +1172,12 @@
         playButtons.forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.stopPropagation();
-                const audioSrc = this.getAttribute('data-audio');
+                let audioSrc = this.getAttribute('data-audio');
+                
+                // Dekoda HTML-entities
+                const textarea = document.createElement('textarea');
+                textarea.innerHTML = audioSrc;
+                audioSrc = textarea.value;
                 const overlay = this.closest('.portfolio-overlay');
 
                 // Stop previous audio
