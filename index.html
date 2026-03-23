@@ -344,6 +344,19 @@
             color: var(--light-gold);
         }
 
+        .hero p .purchase-link {
+            color: var(--primary-gold);
+            font-weight: 700;
+            text-decoration: underline;
+            border-bottom: 1px solid rgba(248, 193, 31, 0.8);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hero p .purchase-link:hover {
+            color: var(--white);
+            border-color: var(--white);
+        }
+
         .hero-btns {
             display: flex;
             gap: 20px;
@@ -476,6 +489,62 @@
             margin-bottom: 15px;
         }
 
+        /* ====== LICENSE SECTION ====== */
+        .license {
+            background: var(--light-gray);
+        }
+
+        .license-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .license-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 73, 110, 0.1);
+        }
+
+        .license-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-gold);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .license-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-blue);
+        }
+
+        .license-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .license-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .license-card p {
+            color: var(--dark-gray);
+            line-height: 1.8;
+        }
+
         /* ====== PORTFOLIO SECTION ====== */
         .portfolio {
             background: var(--light-gray);
@@ -485,6 +554,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
+            justify-content: center;
         }
 
         .portfolio-item {
@@ -536,6 +606,84 @@
             text-align: center;
             margin-bottom: 20px;
             color: var(--white);
+        }
+
+        .play-btn {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(248, 193, 31, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-gold);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .play-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(248, 193, 31, 0.6);
+        }
+
+        .play-btn:hover::before {
+            left: 0;
+        }
+
+        .play-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .progress-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            z-index: 10;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-gold);
+            width: 0%;
+            border-radius: 2px;
+            transition: width 0.1s linear;
+        }
+
+        .progress-time {
+            display: flex;
+            justify-content: space-between;
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         /* ====== FOOTER ====== */
@@ -745,6 +893,8 @@
                     <li><a href="#hero">Hem</a></li>
                     <li><a href="#about">Om oss</a></li>
                     <li><a href="#services">Team</a></li>
+                    <li><a href="#license">Licens</a></li>
+                    <li><a href="#portfolio">Våra beats</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <div></div>
@@ -761,7 +911,7 @@
             <div class="hero-content">
                 <h1 class="fade-in">Resonant UF <span>Bästa musiken</span></h1>
                 <p class="fade-in delay-1">Vi skapar musik, beats och jinglar som är av högsta kvalitet. Våra beats är jämnförbara med de bästa i branschen fast för ett pris som inte går att matcha.</p>
-                <p class="fade-in delay-2">Om du blir sugen på att köpa ett beat av oss så kontakta oss genom Instagram eller maila oss på ...gmail</p>
+                <p class="fade-in delay-2">Om du blir sugen på att köpa ett beat av oss så kontakta oss genom Instagram eller maila oss på ...gmail eller köpa direkt från: <a href="https://www.beatstars.com/prodbyvimpo" class="purchase-link">Beatstars</a></p>
                 <div class="hero-btns fade-in delay-2">
                     <a href="#about" class="btn btn-secondary">Upptäck mer</a>
                 </div>
@@ -780,7 +930,7 @@
                     <div style="flex: 1 1 300px; min-width: 250px;">
                         <h2>Vår Vision</h2>
                         <p>Vi skapade resonant för att vi inom företaget älskar att skapa musik och vill vara del av den industrin men vi strävar också efter att få industrin att bli billigare men också samtidigt bibehålla samma kvalitet på musiken.</p>
-                        <p>Genom att sammarbeta med våra kunder och komunisera under produktionen av beats och musik så kan vi garantera en slutprodukt som verkligen speglar deras vision och behov.</p>
+                        <p>Genom att samarbeta med våra kunder och kommunisera under produktionen av beats och musik så kan vi garantera en slutprodukt som verkligen speglar deras vision och behov.</p>
                     </div>
                     <div class="about-features" style="flex: 1 1 300px; min-width: 250px;">
                         <div class="feature">
@@ -821,24 +971,24 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Vårat Team</h2>
+                <h2>Vårt Team</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <h3>Axel - Musikproducent och Vd</h3>
-                    <p>Axel är en passionerad musikproducent med erfarenhet av att skapa högkvalitativa beats och jinglar. Han har blandannat gjort musik till sin egna sporifyprofil.</p>
+                    <h3>Axel - Musikproducent och VD</h3>
+                    <p>Axel är en passionerad musikproducent med erfarenhet av att skapa högkvalitativa beats och jinglar. Han har bland annat gjort musik till sin egna Spotify-profil.</p>
                 </div>
                 <div class="service-card fade-in delay-1">
-                    <h3>Vilmer- Musikproducent</h3>
-                    <p>Producerar och utveklar musik och ansvarar att den slutdliga produkten uppfyller kundens krav och förväntningar och att kvaliten på ljudet är av högsta grad.</p>
+                    <h3>Vilmer - Musikproducent</h3>
+                    <p>Producerar och utvecklar musik och ansvarar att den slutgiltiga produkten uppfyller kundens krav och förväntningar och att kvaliteten på ljudet är av högsta grad.</p>
                 </div>
                 <div class="service-card fade-in delay-2">
                     <h3>Isak - Musikproducent</h3>
-                    <p>Isak är en kreativ musikproducent med fokus på att skapa unika ljudlandskap och atmosfärer. Han har och mycket erfarenhet med musik då han har vart med och skapat musik för gruppen Övermarken.</p>
+                    <p>Isak är en kreativ musikproducent med fokus på att skapa unika ljudlandskap och atmosfärer. Han har mycket erfarenhet med musik då han har varit med och skapat musik för gruppen Övermarken.</p>
                 </div>
                 <div class="service-card fade-in delay-3">
                     <h3>Zacke - Kommunikationsansvarig och marknadsförare</h3>
-                    <p>Zacke ansvarar för all kommunikation och marknadsföring, och ser till att företagets budskap når ut på rätt sätt. Han är även den som håller kontakten mellan våra kunder</p>
+                    <p>Zacke ansvarar för all kommunikation och marknadsföring, och ser till att företagets budskap når ut på rätt sätt. Han är även den som håller kontakten mellan våra kunder.</p>
                 </div>
                 <div class="service-card fade-in delay-4">
                     <h3>Leevi - Ekonomiansvarig och marknadsförare</h3>
@@ -847,6 +997,25 @@
                 <div class="service-card fade-in delay-4">
                     <h3>Viggo - Webbutvecklare</h3>
                     <p>Viggo är en erfaren webbutvecklare med fokus på att skapa användarvänliga och responsiva webbplatser. Han har arbetat med flera framstående kunder och har en passion för att lösa komplexa problem genom teknik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- License Section -->
+    <section class="license" id="license">
+        <div class="container">
+            <div class="section-title">
+                <h2>Licenstyper</h2>
+            </div>
+            <div class="license-grid">
+                <div class="license-card fade-in">
+                    <h3>🎵 Icke-exklusiv licens: 200kr </h3>
+                    <p>Perfekt för dig som vill släppa musik, content eller demos utan att spräcka budgeten!</p>
+                </div>
+                <div class="license-card fade-in delay-1">
+                    <h3>⭐ Exclusive License: 400kr</h3>
+                    <p>Du får full rättighet till beatet - ingen annan artist kan använda det!</p>
                 </div>
             </div>
         </div>
@@ -883,6 +1052,46 @@
                         </button>
                     </div>
                 </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Yasin Gitarr - Stilig</div>
+                    <div class="portfolio-overlay">
+                        <button class="play-btn" data-audio="Yasin gitarr beat &quot;Stilig&quot; (prodby.vimpo).mp3">
+                            ▶ Spela upp
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Yasin Beat</div>
+                    <div class="portfolio-overlay">
+                        <button class="play-btn" data-audio="yasin beat prod vimpo x  nickeno.mp3">
+                            ▶ Spela upp
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Morad - Barcelona</div>
+                    <div class="portfolio-overlay">
+                        <button class="play-btn" data-audio="morad beat _barcelona mixedby_nickeno_.mp3">
+                            ▶ Spela upp
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Einar - Tider</div>
+                    <div class="portfolio-overlay">
+                        <button class="play-btn" data-audio="einar type beat &quot;tider&quot; (prod vimpo x nickeno).mp3">
+                            ▶ Spela upp
+                        </button>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: var(--primary-blue); display: flex; justify-content: center; align-items: center; color: var(--primary-gold); font-size: 1.5rem;">Dizzy Drill</div>
+                    <div class="portfolio-overlay">
+                        <button class="play-btn" data-audio="Dizzy Drill Type Beat (@prodbyvimpo).mp3">
+                            ▶ Spela upp
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -893,21 +1102,23 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>Resonant UF</h3>
-                    <p>Vi skapar musik och förnyar en industri</p>
+                    <p>Vi skapar musik och förnyar en industrin!</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Länkar</h3>
+                    <h3>Utforska</h3>
                     <ul class="footer-links">
                         <li><a href="#hero">Hem</a></li>
                         <li><a href="#about">Om oss</a></li>
                         <li><a href="#services">Team</a></li>
+                        <li><a href="#license">Licens</a></li>
+                        <li><a href="#portfolio">Våra beats</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Följ oss</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Tiktok</a></li>
-                        <li><a href="#">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@resonant.uf?lang=en">Tiktok</a></li>
+                        <li><a href="https://www.instagram.com/resonant.uf/">Instagram</a></li>
                     </ul>
                 </div>
             </div>
@@ -955,32 +1166,105 @@
         // Portfolio play button logic
         const playButtons = document.querySelectorAll('.play-btn');
         let currentAudio = null;
+        let currentButton = null;
+        let progressInterval = null;
+
         playButtons.forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 const audioSrc = this.getAttribute('data-audio');
+                const overlay = this.closest('.portfolio-overlay');
+
+                // Stop previous audio
                 if (currentAudio) {
                     currentAudio.pause();
                     currentAudio.currentTime = 0;
+                    clearInterval(progressInterval);
+                    if (currentButton) {
+                        currentButton.textContent = '▶ Spela upp';
+                    }
                 }
+
+                // Create new audio
                 currentAudio = new Audio(audioSrc);
-                currentAudio.play();
-                this.textContent = 'Stoppa';
-                currentAudio.onended = () => {
-                    this.textContent = 'Spela upp';
+                currentButton = this;
+
+                // Create or get progress container
+                let progressContainer = overlay.querySelector('.progress-container');
+                if (!progressContainer) {
+                    progressContainer = document.createElement('div');
+                    progressContainer.className = 'progress-container';
+                    progressContainer.innerHTML = `
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-time">
+                            <span class="current-time">0:00</span>
+                            <span class="total-time">0:00</span>
+                        </div>
+                    `;
+                    overlay.appendChild(progressContainer);
+                }
+
+                // Update total time when metadata loads
+                currentAudio.onloadedmetadata = () => {
+                    const totalTime = formatTime(currentAudio.duration);
+                    overlay.querySelector('.total-time').textContent = totalTime;
                 };
+
+                // Play audio
+                currentAudio.play();
+                this.textContent = '⏸ Stoppa';
+
+                // Update progress bar
+                progressInterval = setInterval(() => {
+                    const percentage = (currentAudio.currentTime / currentAudio.duration) * 100;
+                    overlay.querySelector('.progress-fill').style.width = percentage + '%';
+                    overlay.querySelector('.current-time').textContent = formatTime(currentAudio.currentTime);
+                }, 100);
+
+                // Handle audio end
+                currentAudio.onended = () => {
+                    this.textContent = '▶ Spela upp';
+                    clearInterval(progressInterval);
+                    overlay.querySelector('.progress-fill').style.width = '0%';
+                    overlay.querySelector('.current-time').textContent = '0:00';
+                };
+
+                // Handle progress bar click
+                const progressBar = overlay.querySelector('.progress-bar');
+                progressBar.addEventListener('click', function(event) {
+                    const rect = progressBar.getBoundingClientRect();
+                    const percent = (event.clientX - rect.left) / rect.width;
+                    currentAudio.currentTime = percent * currentAudio.duration;
+                }, { once: false });
+
+                // Handle manual pause/play toggle
                 this.onclick = () => {
                     if (!currentAudio.paused) {
                         currentAudio.pause();
-                        currentAudio.currentTime = 0;
-                        this.textContent = 'Spela upp';
+                        clearInterval(progressInterval);
+                        this.textContent = '▶ Spela upp';
                     } else {
                         currentAudio.play();
-                        this.textContent = 'Stoppa';
+                        this.textContent = '⏸ Stoppa';
+                        progressInterval = setInterval(() => {
+                            const percentage = (currentAudio.currentTime / currentAudio.duration) * 100;
+                            overlay.querySelector('.progress-fill').style.width = percentage + '%';
+                            overlay.querySelector('.current-time').textContent = formatTime(currentAudio.currentTime);
+                        }, 100);
                     }
                 };
             });
         });
+
+        // Helper function to format time
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
     </script>
 </body>
 </html>
